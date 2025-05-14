@@ -2,98 +2,98 @@
 
 export default function TicketFly() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-teal-400 p-4">
-      <div className="bg-white rounded-2xl shadow-lg w-80 max-w-sm md:max-w-md font-sans overflow-hidden relative flex flex-col">
-        {/* Sección superior */}
-        <div className="relative px-6 py-3 rounded-t-2xl pb-3">
-          {/* Línea vinotinto vertical */}
-          <div className="w-1.5 bg-red-800 absolute left-0 top-6 bottom-6" />
+    <section className="min-h-screen flex items-center justify-center bg-teal-400 p-6">
+      <article className="bg-white w-80 max-w-sm md:max-w-md rounded-2xl shadow-xl font-sans flex flex-col overflow-hidden relative">
 
-          <div className="w-full flex justify-between text-lg font-semibold pl-3 relative">
-            {/* Izquierda */}
+        {/* Parte superior del ticket */}
+        <header className="px-6 py-3 rounded-t-2xl border-b-2 border-dashed border-teal-400 relative">
+          {/* Línea vertical roja a la izquierda */}
+          <span className="absolute top-6 bottom-6 left-0 w-1.5 bg-red-800" />
+
+          {/* Info de salida y llegada */}
+          <div className="flex justify-between relative text-base font-semibold pl-3">
+            {/* Origen */}
             <div className="text-left">
-              <div className="text-xl">LOS</div>
-              <div className="text-[10px] text-gray-500 mt-1">LAGOS</div>
-              <div className="text-sm mt-2">01:45 PM</div>
+              <p className="text-xl">LOS</p>
+              <small className="text-gray-500 text-[10px] block mt-1">LAGOS</small>
+              <p className="mt-2 text-sm">01:45 PM</p>
             </div>
 
-            {/* Avión al centro */}
+            {/* Icono avión centrado */}
             <div className="absolute left-1/2 transform -translate-x-1/2 top-2 flex flex-col items-center">
-              <div className="text-xs mb-1">✈</div>
+              <span className="text-xs mb-1">✈</span>
             </div>
 
-            {/* Derecha */}
+            {/* Destino */}
             <div className="text-right">
-              <div className="text-xl">ABV</div>
-              <div className="text-[10px] text-gray-500 mt-1">ABUJA</div>
-              <div className="text-sm mt-2">02:45 PM</div>
+              <p className="text-xl">ABV</p>
+              <small className="text-gray-500 text-[10px] block mt-1">ABUJA</small>
+              <p className="mt-2 text-sm">02:45 PM</p>
             </div>
           </div>
 
-          {/* Fecha más abajo de las horas */}
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-            <div className="text-[10px] text-gray-400 font-light">14 MAY 2025</div>
+          {/* Fecha en la parte inferior */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[10px] text-gray-400 font-light">
+            14 MAY 2025
           </div>
-        </div>
+        </header>
 
-        {/* Línea punteada más visible */}
-        <div
-          className="w-full text-center text-gray-300 text-xl tracking-widest font-light"
-          style={{ letterSpacing: "0.6rem", lineHeight: "1.5rem" }}
-        >
-          - - - - - - - - - - 
-        </div>
+     
 
-        {/* Sección inferior */}
-        <div className="bg-white px-6 pt-1 pb-7 space-y-4 relative rounded-b-2xl">
+        {/* Parte inferior del ticket */}
+        <main className="bg-white px-6 pt-2 pb-6 rounded-b-2xl space-y-4">
+          {/* Información personal y QR */}
           <div className="flex justify-between items-center">
             <div>
-              <span className="text-gray-500 block text-[11px]">NAME</span>
+              <span className="block text-[11px] text-gray-500">PASSENGER</span>
               <span className="font-bold text-base">MR ESU G</span>
             </div>
             <img
               src="https://api.qrserver.com/v1/create-qr-code/?size=70x70&data=7ABC123"
-              alt="QR Code"
+              alt="Código QR"
               className="w-16 h-16"
             />
           </div>
 
-          <div className="flex justify-between mt-4">
+          {/* Detalles de vuelo */}
+          <div className="flex justify-between">
             <div>
-              <span className="text-gray-500 text-[11px]">FLIGHT</span>
-              <div className="font-bold text-base">AR124</div>
+              <span className="block text-[11px] text-gray-500">FLIGHT</span>
+              <p className="font-bold text-base">AR124</p>
             </div>
             <div className="text-right">
-              <span className="text-gray-500 text-[10px]">BOOKING REF</span>
-              <div className="font-bold text-base">7ABC123</div>
+              <span className="block text-[10px] text-gray-500">REFERENCE</span>
+              <p className="font-bold text-base">7ABC123</p>
             </div>
           </div>
 
-          <div className="flex justify-between mt-5 items-end">
+          {/* Información de abordaje */}
+          <div className="flex justify-between items-end mt-5">
             <div>
-              <span className="text-gray-500 text-[11px]">BOARDING</span>
-              <div className="font-bold text-base">MMIA</div>
+              <span className="text-[11px] text-gray-500">FROM</span>
+              <p className="font-bold text-base">MMIA</p>
             </div>
-            <div className="font-bold text-base mb-[2px]">GATE 3</div>
+            <p className="font-bold text-base mb-[2px]">GATE 3</p>
             <div className="text-right">
-              <div className="font-bold text-base">01:05 PM</div>
+              <p className="font-bold text-base">01:05 PM</p>
             </div>
           </div>
 
+          {/* Footer con marca y asiento */}
           <div className="flex justify-between items-center mt-6">
-            <div className="flex items-center text-xs text-gray-600 space-x-2">
+            <div className="flex items-center text-gray-600 text-xs space-x-2">
               <div className="w-9 h-9 flex items-center justify-center rounded-full bg-black text-white text-lg">
                 ✈
               </div>
-              <span className="text-[11px] text-gray-500">www.gabair.ng</span>
+              <span className="text-[11px] text-gray-500">gabair.ng</span>
             </div>
-            <div className="border text-center text-xs font-bold overflow-hidden w-14">
-              <div className="px-3 py-1 border-b h-5 text-[10px]">SEAT</div>
-              <div className="px-3 py-1 h-8 flex items-center justify-center text-lg">12B</div>
+            <div className="border w-14 text-xs font-bold text-center overflow-hidden">
+              <div className="border-b py-1 h-5 text-[10px]">SEAT</div>
+              <div className="flex items-center justify-center py-1 h-8 text-lg">12B</div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </main>
+      </article>
+    </section>
   );
 }
